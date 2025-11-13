@@ -1,8 +1,8 @@
 <div>
     <!-- PER AGGIUNGERE GLI EVENTI (LOGICA) AL BUTTON -->
-    <button (click)="onSelectedUser()">
+    <button>
         <!-- PER LE IMMAGINI SI USA IL BINDING PER I VALORI DINAMICI, OVVERO TRA PARENTESI QUADRE -->        
-        <img [src]="imagePath()"/>
-        <span>{{ selectedUser().name }}</span>
+        <img [src]="imagePath"/>
+        <span>{{ name }}</span>
     </button>
 </div>
