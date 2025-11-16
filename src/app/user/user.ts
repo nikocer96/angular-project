@@ -2,23 +2,30 @@ import { Component, computed, EventEmitter, Input, Output, signal } from '@angul
 
 /*const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);*/
 
+interface UserType {
+  id: string,
+  name: string,
+  avatar: string
+}
 @Component({
   selector: 'app-user',
   imports: [],
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
+
 export class User {
   /*selectedUser = signal(DUMMY_USERS[randomIndex]);
   imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar)*/
-  @Input({required: true}) id!: string;
+  /*@Input({required: true}) id!: string;
   @Input({required: true}) avatar!: string;
-  @Input({required: true}) name!: string;
+  @Input({required: true}) name!: string;*/
+  @Input({required: true}) userType!: UserType
   /* output E' UNA PROPRIETA' E QUINDI CON PARENTESI TONDE */
   @Output() select = new EventEmitter();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.userType?.avatar
   }
   
   /*onSelectedUser() {
@@ -27,6 +34,6 @@ export class User {
   }*/
 
     onSelectUser() {
-      this.select.emit(this.id);
+      this.select.emit(this.userType?.id);
     }
 }
