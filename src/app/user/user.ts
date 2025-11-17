@@ -25,7 +25,7 @@ export class User {
   @Output() select = new EventEmitter();
 
   get imagePath() {
-    return 'assets/users/' + this.userType?.avatar
+    return 'assets/users/' + this.userType.avatar
   }
   
   /*onSelectedUser() {
@@ -34,6 +34,6 @@ export class User {
   }*/
 
     onSelectUser() {
-      this.select.emit(this.userType?.id);
+      this.select.emit(this.userType.id);
     }
 }
