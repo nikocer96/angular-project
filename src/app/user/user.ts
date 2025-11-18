@@ -1,12 +1,9 @@
 import { Component, computed, EventEmitter, Input, Output, signal } from '@angular/core';
+import { UserType } from "./user.model"
 
 /*const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);*/
 
-interface UserType {
-  id: string,
-  name: string,
-  avatar: string
-}
+
 @Component({
   selector: 'app-user',
   imports: [],
@@ -23,6 +20,7 @@ export class User {
   @Input({required: true}) userType!: UserType
   /* output E' UNA PROPRIETA' E QUINDI CON PARENTESI TONDE */
   @Output() select = new EventEmitter();
+  @Input({ required: true}) selected!: boolean;
 
   get imagePath() {
     return 'assets/users/' + this.userType.avatar
