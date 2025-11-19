@@ -1,12 +1,16 @@
-<article>
-    <h2>{{ task.title }}</h2>
-    <time>{{ task.dueDate }}</time>
-    <p>{{ task.summary }}</p>
-    <p class="actions">
-        <!-- <button (click)="onCompleteTask()">Complete</button> -->
-         <button (click)="onOpenComplete()">Complete</button>
-    </p>
-    @if (isOpenComplete) {
-        <app-complete-task [task]="task" (completeCancel)="onCloseComplete()" (completeConfirm)="onCompleteTask()"></app-complete-task>
-    }
-</article>
+<app-card>
+    <article>
+        <h2>{{ task.title }}</h2>
+        <time>{{ task.dueDate | date:'fullDate' }}</time>
+        <p>{{ task.summary }}</p>
+        <p class="actions">
+            <!-- <button (click)="onCompleteTask()">Complete</button> -->
+            <button (click)="onOpenComplete()">Complete</button>
+        </p>
+        @if (isOpenComplete) {
+        <app-complete-task [task]="task" (completeCancel)="onCloseComplete()"
+            (completeConfirm)="onCompleteTask()"></app-complete-task>
+        }
+    </article>
+
+</app-card>

@@ -1,8 +1,10 @@
-<div>
-    <!-- PER AGGIUNGERE GLI EVENTI (LOGICA) AL BUTTON -->
-    <button [class.active] = "selected" (click)="onSelectUser()">
-        <!-- PER LE IMMAGINI SI USA IL BINDING PER I VALORI DINAMICI, OVVERO TRA PARENTESI QUADRE -->        
-        <img [src]="imagePath"/>
-        <span>{{ userType.name }}</span>
-    </button>
-</div>
+<app-card>
+    <div>
+        <!-- PER AGGIUNGERE GLI EVENTI (LOGICA) AL BUTTON -->
+        <button [class.active]="selected" (click)="onSelectUser()">
+            <!-- PER LE IMMAGINI SI USA IL BINDING PER I VALORI DINAMICI, OVVERO TRA PARENTESI QUADRE -->
+            <img [src]="imagePath" />
+            <span>{{ userType.name }}</span>
+        </button>
+    </div>
+</app-card>
