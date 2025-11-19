@@ -3,6 +3,10 @@
     <time>{{ task.dueDate }}</time>
     <p>{{ task.summary }}</p>
     <p class="actions">
-        <button (click)="onCompleteTask()">Complete</button>
+        <!-- <button (click)="onCompleteTask()">Complete</button> -->
+         <button (click)="onOpenComplete()">Complete</button>
     </p>
+    @if (isOpenComplete) {
+        <app-complete-task [task]="task" (completeCancel)="onCloseComplete()" (completeConfirm)="onCompleteTask()"></app-complete-task>
+    }
 </article>

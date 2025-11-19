@@ -5,3 +5,9 @@ export interface TaskUser {
   summary: string,
   dueDate: string
 }
+
+export interface NewTaskInput {
+  title: string,
+  summary: string,
+  dueDate: string
+}
