@@ -19,7 +19,7 @@ export class User {
   @Input({required: true}) avatar!: string;
   @Input({required: true}) name!: string;*/
   @Input({required: true}) userType!: UserType
-  /* output E' UNA PROPRIETA' E QUINDI CON PARENTESI TONDE */
+  /* output E' UN EVENTO E QUINDI CON PARENTESI TONDE */
   @Output() select = new EventEmitter();
   @Input({ required: true}) selected!: boolean;
 
