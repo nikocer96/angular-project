@@ -28,14 +28,10 @@ export class Tasks {
     return this.taskService.getUserTasks(this.userId);
   }
 
-  completeTask(id: string) {
-    this.taskService.removeTask(id);
-  }
-
   onStartAddTask() {
     this.isAddingTask = true;
   }
-  onCancelAddTask() {
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 

@@ -8,8 +8,7 @@
             <button (click)="onOpenComplete()">Complete</button>
         </p>
         @if (isOpenComplete) {
-        <app-complete-task [task]="task" (completeCancel)="onCloseComplete()"
-            (completeConfirm)="onCompleteTask()"></app-complete-task>
+        <app-complete-task [task]="task" (completeCancel)="onCloseComplete()"></app-complete-task>
         }
     </article>
 

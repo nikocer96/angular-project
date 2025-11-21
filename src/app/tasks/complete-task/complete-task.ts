@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { TaskUser } from '../task/task.model';
+import { TaskService } from '../tasks.service';
 
 @Component({
   selector: 'app-complete-task',
@@ -11,12 +12,13 @@ export class CompleteTask {
   @Input({required: true}) task!: TaskUser;
   @Output() completeCancel = new EventEmitter();
   @Output() completeConfirm = new EventEmitter();
+  private taskService = inject(TaskService);
 
   onCompleteCancel() {
     this.completeCancel.emit();
   }
 
   onCompleteConfirm() {
-    this.completeConfirm.emit(this.task.id);
+    this.taskService.removeTask(this.task.id);
   }
 }

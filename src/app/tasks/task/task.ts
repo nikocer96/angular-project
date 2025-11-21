@@ -13,13 +13,8 @@ import { DatePipe } from '@angular/common';
 })
 export class Task {
   @Input({required: true}) task!: TaskUser;
-  @Output() complete = new EventEmitter<string>();
   @Output() completeCancel = new EventEmitter();
   isOpenComplete = false;
-
-  onCompleteTask() {
-    this.complete.emit(this.task.id)
-  }
 
   onOpenComplete() {
     this.isOpenComplete = true;
